@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_main"
+    tools:context="com.example.evy.luxury.MainActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginStart="69dp"
+        android:background="@color/colorPrimary"
+        android:onClick="signIn"
+        android:text="Sign In"
+        android:textColor="@android:color/white"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_email"
+        app:layout_constraintEnd_toStartOf="@+id/textView_email"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/textView_email"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="156dp"
+        android:layout_marginEnd="68dp"
+        android:background="@color/colorAccent"
+        android:onClick="signUp"
+        android:text="Sign Up"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_login" />
+
+</android.support.constraint.ConstraintLayout>
