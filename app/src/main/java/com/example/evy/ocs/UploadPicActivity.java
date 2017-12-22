@@ -11,44 +11,32 @@ import android.view.View;
 import android.net.Uri;
 
 
-public class UploadPicActivity extends AppCompatActivity implements View.OnClickListener {
+public class UploadPicActivity extends AppCompatActivity  {
 
     private static final int RESULT_LOAD_IMAGE = 1;
 
     ImageView imageUpload;
     Button bUpload;
 
-    public void next(View view)
+
+    public void gallary(View view)
     {
-        Intent intent = new Intent(UploadPicActivity.this, SignedUpActivity.class);
+        Intent intent = new Intent(UploadPicActivity.this, GalleryActivity.class);
         startActivity(intent);
     }
+
+    public void camera(View view)
+    {
+        Intent intent = new Intent(UploadPicActivity.this, CameraActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_pic);
 
-        imageUpload = (ImageView) findViewById(R.id.imageUpload);
-        bUpload = (Button) findViewById(R.id.bUpload);
-
-        imageUpload.setOnClickListener(this);
-    }
-
-    @Override
-    public void onClick(View v) {
-        Intent galleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        startActivityForResult(galleryIntent, RESULT_LOAD_IMAGE);
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && data != null){
-            Uri selectedImage = data.getData();
-            imageUpload.setImageURI(selectedImage);
-        }
     }
 
 }

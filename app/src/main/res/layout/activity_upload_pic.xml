@@ -8,55 +8,40 @@
     tools:context="com.example.evy.ocs.UploadPicActivity"
     tools:layout_editor_absoluteY="81dp">
 
-    <ImageView
-        android:id="@+id/imageUpload"
-        android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="33dp"
-        android:background="@drawable/click"
-        app:layout_constraintBottom_toTopOf="@+id/bUpload3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
     <Button
         android:id="@+id/bUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="185dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
         android:background="@color/colorPrimary"
-        android:onClick="next"
-        android:text="NEXT"
+        android:onClick="camera"
+        android:text="camera"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/bUpload3"
+        app:layout_constraintStart_toStartOf="@+id/bUpload3"
         app:layout_constraintTop_toBottomOf="@+id/bUpload3" />
 
     <Button
         android:id="@+id/bUpload3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginStart="31dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="32dp"
         android:background="@color/colorAccent"
-        android:text="Upload"
+        android:onClick="gallary"
+        android:text="gallery"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/bUpload"
-        app:layout_constraintStart_toStartOf="@+id/imageUpload"
-        app:layout_constraintTop_toBottomOf="@+id/imageUpload" />
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="26dp"
-        android:layout_marginStart="2dp"
-        android:layout_marginTop="64dp"
-        android:text="Upload Profile Picture: "
-        app:layout_constraintBottom_toTopOf="@+id/imageUpload"
-        app:layout_constraintStart_toStartOf="@+id/imageUpload"
+        android:layout_marginTop="144dp"
+        android:text="You must upload a photo of you: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

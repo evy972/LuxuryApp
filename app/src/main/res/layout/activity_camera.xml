@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_opt"
+    tools:context="com.example.evy.ocs.CameraActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <ImageView
+        android:id="@+id/imageUpload"
+        android:layout_width="145dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/click"
+        app:layout_constraintBottom_toTopOf="@+id/bUpload"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <Button
+        android:id="@+id/bUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="186dp"
+        android:layout_marginEnd="27dp"
+        android:background="@color/colorPrimary"
+        android:onClick="next"
+        android:text="NEXT"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageUpload"
+        app:layout_constraintTop_toBottomOf="@+id/imageUpload" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="85dp"
+        android:text="Take Profile Picture: "
+        app:layout_constraintBottom_toTopOf="@+id/imageUpload"
+        app:layout_constraintStart_toStartOf="@+id/imageUpload"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
