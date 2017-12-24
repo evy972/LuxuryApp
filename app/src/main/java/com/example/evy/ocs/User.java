@@ -5,9 +5,22 @@ package com.example.evy.ocs;
  */
 
 public class User {
-    private String _fname;
-    private String _lname;
+    public String username;
+    private String password;
+
+
+    public User()
+    {
+
+    }
+
+    public User(String username, String email)
+    {
+        this.username = username;
+        this.password = password;
+    }
 
 
 
 }
+
