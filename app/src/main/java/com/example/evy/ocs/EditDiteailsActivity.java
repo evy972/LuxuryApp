@@ -5,17 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class MyAccountActivity extends AppCompatActivity {
+public class EditDiteailsActivity extends AppCompatActivity {
 
-    public void edit(View view)
+    public void save(View view)
     {
-        Intent intent = new Intent(MyAccountActivity.this, EditDiteailsActivity.class);
+        Intent intent = new Intent(EditDiteailsActivity.this, MyAccountActivity.class);
         startActivity(intent);
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_account);
+        setContentView(R.layout.activity_edit_diteails);
     }
 }

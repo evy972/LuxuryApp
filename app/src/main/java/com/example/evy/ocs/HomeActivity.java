@@ -26,6 +26,12 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void products(View view)
+    {
+        Intent intent = new Intent(HomeActivity.this, ProductsActivity.class);
+        startActivity(intent);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

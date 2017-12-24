@@ -10,30 +10,58 @@
 
     <Button
         android:id="@+id/button_login"
-        android:layout_width="0dp"
+        android:layout_width="95dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginStart="69dp"
+        android:layout_marginBottom="79dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="397dp"
         android:background="@color/colorPrimary"
         android:onClick="signIn"
         android:text="Sign In"
         android:textColor="@android:color/white"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView_email"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMap"
         app:layout_constraintEnd_toStartOf="@+id/textView_email"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/textView_email"
         android:layout_width="0dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="156dp"
         android:layout_marginEnd="68dp"
         android:background="@color/colorAccent"
         android:onClick="signUp"
         android:text="Sign Up"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/button_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button_login" />
+
+    <Button
+        android:id="@+id/buttonMap"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="255dp"
+        android:layout_marginStart="35dp"
+        android:background="@drawable/location"
+        android:onClick="map"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAbout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    <Button
+        android:id="@+id/buttonAbout"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/about"
+        android:onClick="about"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonMap" />
 
 </android.support.constraint.ConstraintLayout>

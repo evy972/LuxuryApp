@@ -9,7 +9,7 @@ public class SignedUpActivity extends AppCompatActivity {
 
     public void Continue(View view)
     {
-        Intent intent = new Intent(SignedUpActivity.this, HomeActivity.class);
+        Intent intent = new Intent(SignedUpActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 

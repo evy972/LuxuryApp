@@ -5,18 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_signedup"
-    tools:context="com.example.evy.ocs.SignedUpActivity">
+    tools:context="com.example.evy.ocs.SignedUpActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="229dp"
+        android:layout_width="175dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="329dp"
         android:background="@color/colorAccent"
         android:onClick="Continue"
-        android:text="continue"
+        android:text="continue to login"
         android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="197dp"
+        android:text="You have to login first"
+        app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>
