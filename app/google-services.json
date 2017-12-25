@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "816626993581",
+    "firebase_url": "https://luxurycarstore-701a9.firebaseio.com",
+    "project_id": "luxurycarstore-701a9",
+    "storage_bucket": "luxurycarstore-701a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:816626993581:android:da8a47b11a8d375d",
+        "android_client_info": {
+          "package_name": "com.example.evy.ocs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "816626993581-g7cip7ac86e4qmck8b4shallu7a3u8it.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD51BIEJqCPdanTTciP57Fkh1xBT1_M-SA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
