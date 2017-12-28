@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
 
     String username;
     String password;
+    boolean isAuth;
 
     private Button mLoginBtn;
 
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
+        isAuth = false;
 
         mUsernameField = (EditText) findViewById(R.id.editText_email);
         mPasswordField = (EditText) findViewById(R.id.editText_password);
@@ -53,9 +54,8 @@ public class LoginActivity extends AppCompatActivity {
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                username = mUsernameField.getText().toString();
-                password = mPasswordField.getText().toString();
-
+                username = mUsernameField.getText().toString().trim();
+                password = mPasswordField.getText().toString().trim();
 
 
                 databaseUsers = FirebaseDatabase.getInstance().getReference("users");
@@ -69,18 +69,20 @@ public class LoginActivity extends AppCompatActivity {
 
                             String Key = d.getKey();
                             String Value = d.getValue().toString();
+                            String mUsername = "";
+                            String mPassword = "";
 
 
-                            String mUsername = d.getValue().toString().substring(Value.indexOf('=') + 1, Value.indexOf(','));
+                            mUsername = d.getValue().toString().substring(Value.indexOf('=') + 1, Value.indexOf(','));
 
 
-                            String mPassword = Value.substring(Value.lastIndexOf('=') + 1);
-                            password = password + '}';
-
+                            mPassword = Value.substring(Value.lastIndexOf('='));
+                            mPassword = mPassword.substring(1, mPassword.length()-1);
 
 
                             if(mUsername.equals(username) && mPassword.equals(password))
                             {
+                                isAuth = true;
                                 Toast p = Toast.makeText(LoginActivity.this,"Hello " + mUsername + " " + "Welcome aboard!", Toast.LENGTH_LONG);
                                 p.show();
 
@@ -91,9 +93,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
                         }
-
-                        Toast p = Toast.makeText(LoginActivity.this,"Please check your username & password", Toast.LENGTH_LONG);
-                        p.show();
+                        if(isAuth == false)
+                        {
+                            Toast p = Toast.makeText(LoginActivity.this,"Please check your username & password", Toast.LENGTH_LONG);
+                            p.show();
+                        }
                         mUsernameField.setText("");
                         mPasswordField.setText("");
                     }
@@ -126,71 +130,3 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
-
-/*
-
-
-
-                String mUsername = myRef.child("username").getKey();
-                Toast pieceToast= Toast.makeText(getApplicationContext(), mUsername, Toast.LENGTH_SHORT);
-                pieceToast.show();
-                String mPassword = myRef.child("password").getKey();
-                 pieceToast= Toast.makeText(getApplicationContext(), mPassword, Toast.LENGTH_SHORT);
-                pieceToast.show();
-
-                if(mUsername.equals(username) && mPassword.equals(password))
-                {
-                     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    startActivity(intent);
-                }
-else{
-                     pieceToast= Toast.makeText(getApplicationContext(), "Please check your username & password", Toast.LENGTH_SHORT);
-                    pieceToast.show();
-                }
-
-            }
-
-        });
- */
-
-
-
-
-/*
-////1. extract username and password
-2. get over the database and check if username equal to username
-3. and password equal to password
-if yes login
-else not
-
-
- */
-
-
-
-// Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-//startActivity(intent);
-
-
-/*
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-
-public class LoginActivity extends AppCompatActivity {
-
-    public void signIn(View view)
-    {
-        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-        startActivity(intent);
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-    }
-}
-*/
