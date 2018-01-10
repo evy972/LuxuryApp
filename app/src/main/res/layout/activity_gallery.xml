@@ -9,30 +9,30 @@
     tools:layout_editor_absoluteY="81dp">
 
     <ImageView
-        android:id="@+id/imageUpload"
-        android:layout_width="145dp"
-        android:layout_height="0dp"
+        android:id="@+id/imageShow"
+        android:layout_width="187dp"
+        android:layout_height="146dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="84dp"
         android:background="@drawable/click"
         app:layout_constraintBottom_toTopOf="@+id/bUpload"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView9"/>
 
     <Button
         android:id="@+id/bUpload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="186dp"
-        android:layout_marginEnd="27dp"
+        android:layout_marginEnd="60dp"
         android:background="@color/colorPrimary"
         android:onClick="next"
-        android:text="NEXT"
+        android:text="Upload"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageUpload"
-        app:layout_constraintTop_toBottomOf="@+id/imageUpload" />
+        app:layout_constraintEnd_toEndOf="@+id/imageShow"
+        app:layout_constraintTop_toBottomOf="@+id/imageShow"/>
 
     <TextView
         android:id="@+id/textView9"
@@ -41,9 +41,20 @@
         android:layout_marginBottom="27dp"
         android:layout_marginTop="92dp"
         android:text="Choose Profile Picture: "
-        app:layout_constraintBottom_toTopOf="@+id/imageUpload"
+        app:layout_constraintBottom_toTopOf="@+id/imageShow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <Button
+        android:id="@+id/bSelectImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Choose Image"
+        app:layout_constraintStart_toStartOf="@+id/imageShow"
+        app:layout_constraintTop_toBottomOf="@+id/imageShow"
+        />
 
 </android.support.constraint.ConstraintLayout>
