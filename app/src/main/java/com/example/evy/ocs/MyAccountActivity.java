@@ -102,8 +102,6 @@ public class MyAccountActivity extends AppCompatActivity {
 
     private void initVariables()
     {
-        Toast p = Toast.makeText(MyAccountActivity.this,LoginActivity.Name, Toast.LENGTH_LONG);
-        p.show();
 
         name_textView = (TextView)findViewById(R.id.ma_name_text);
         nickName_textView = (TextView)findViewById(R.id.ma_nickname_text);
