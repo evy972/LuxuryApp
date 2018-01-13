@@ -1,3 +1,4 @@
+
 package com.example.evy.ocs;
 
 import android.content.Intent;
@@ -20,19 +21,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+
 
 public class LoginActivity extends AppCompatActivity {
 
     DatabaseReference databaseUsers;
+    DatabaseReference databaseUserInfo;
 
 
     private TextView mUsernameField;
     private TextView mPasswordField;
 
-    String username;
-    String password;
-    boolean isAuth;
+    static String username;
+    static String password;
+    static String UID;
 
+
+    static String Name;
+    static String Email;
+    static String City;
+
+    boolean isAuth;
+    static User user;
     private Button mLoginBtn;
 
 
@@ -67,24 +78,26 @@ public class LoginActivity extends AppCompatActivity {
 
                         for (DataSnapshot d : dataSnapshot.getChildren()) {
 
-                            String Key = d.getKey();
-                            String Value = d.getValue().toString();
-                            String mUsername = "";
-                            String mPassword = "";
+
+                            HashMap<String, String> value = (HashMap<String, String>) d.getValue();
+                            String usernameCheck = value.get("username");
+
+                            String passwordCheck = value.get("password");
 
 
-                            mUsername = d.getValue().toString().substring(Value.indexOf('=') + 1, Value.indexOf(','));
-
-
-                            mPassword = Value.substring(Value.lastIndexOf('='));
-                            mPassword = mPassword.substring(1, mPassword.length()-1);
-
-
-                            if(mUsername.equals(username) && mPassword.equals(password))
+                            if(usernameCheck.equals(username) && passwordCheck.equals(password))
                             {
+
+                                Email = value.get("Email");
+                                Name = value.get("Name");
+                                City = value.get("City");
+                                username = value.get("username");
+                                password = value.get("password");
+                                UID =  d.getKey();
+
                                 isAuth = true;
-                                Toast p = Toast.makeText(LoginActivity.this,"Hello " + mUsername + " " + "Welcome aboard!", Toast.LENGTH_LONG);
-                                p.show();
+                                Toast p2 = Toast.makeText(LoginActivity.this,"Welcome " + usernameCheck + " " + "!", Toast.LENGTH_LONG);
+                                p2.show();
 
                                 Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                 startActivity(intent);
@@ -121,9 +134,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void writeNewUser(String userId, String name, String email) {
-        User user = new User(name, email);
+        user = new User(UID, username, password, Name, City, Email);
 
-        databaseUsers.child("users").child(userId).setValue(user);
     }
 
 }
