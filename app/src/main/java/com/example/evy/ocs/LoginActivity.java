@@ -94,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                                 username = value.get("username");
                                 password = value.get("password");
                                 UID =  d.getKey();
-
+                                user = new User(UID, username, password, Name, City, Email);
                                 isAuth = true;
                                 Toast p2 = Toast.makeText(LoginActivity.this,"Welcome " + usernameCheck + " " + "!", Toast.LENGTH_LONG);
                                 p2.show();
