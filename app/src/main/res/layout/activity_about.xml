@@ -14,9 +14,9 @@
         android:layout_marginEnd="43dp"
         android:layout_marginStart="43dp"
         android:layout_marginTop="89dp"
-        android:text="Online shopping is a form of electronic commerce which allows consumers to directly buy goods or services from a seller over the Internet using a web browser. Consumers find a product of interest by visiting the website of the retailer directly or by searching among alternative vendors using a shopping search engine, which displays the same product's availability and pricing at different e-retailers. As of 2016, customers can shop online using a range of different computers and devices, including desktop computers, laptops, tablet computers and smartphones."
+        android:text="Welcome to our new App!  We have a strong and committed sales staff with many years of experience satisfying our customers' needs. Feel free to browse our inventory online, request more information about vehicles, set up a test drive or inquire about financing!  If you don't see what you are looking for, click on CarFinder, fill out the form, and we will let you know when vehicles arrive that match your search! Or if you would rather discuss your options with our friendly sales staff, click on Directions for interactive driving directions and other contact information. We look forward to serving you!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
